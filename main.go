@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 
-	add "github.com/bytetwiddler/bbmath/add"
+	j "github.com/bytetwiddler/jenk/add"
 )
 
 func main() {
-	fmt.Println("bbmath")
+	fmt.Println("jenk")
 
-	a, err := add.Add(1, 1)
+	a, err := j.Add(1, 1)
 	if err != nil {
 		panic(err)
 	}
