@@ -22,7 +22,7 @@ pipeline {
                 echo 'BUILD EXECUTION STARTED'
                 sh 'go version'
                 sh 'go get ./...'
-                sh 'docker build . -t jenk/jenk'
+                sh 'docker build . -t bittwiddler/jenk'
             }
         }
         stage('deliver') {
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
                 sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
-                sh 'docker push jenk/jenk'
+                sh 'docker push bittwiddler/jenk'
                 }
             }
         }
