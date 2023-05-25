@@ -30,7 +30,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
                 sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
-                sh 'docker push shadowshotx/product-go-micro'
+                sh 'docker push jenk/jenk'
                 }
             }
         }
