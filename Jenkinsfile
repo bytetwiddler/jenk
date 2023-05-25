@@ -1,6 +1,6 @@
 pipeline {
     // install golang 1.20 on Jenkins node
-    agent { any }
+    agent  any 
     tools {
         go 'go1.20'
     }
